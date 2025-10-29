@@ -53,7 +53,7 @@ class VoskASR:
             return None
         
         try:
-            print(f"\n🔊 Listening for {duration} seconds...")
+            print(f"\nListening for {duration} seconds...")
             
             # Record audio
             audio_data = sd.rec(
@@ -64,7 +64,7 @@ class VoskASR:
             )
             sd.wait()
             
-            print("✅ Recording complete. Processing...")
+            print("Recording complete. Processing...")
             
             # Process audio
             chunks = []
@@ -83,14 +83,14 @@ class VoskASR:
             recognized_text = ' '.join(chunks).strip()
             
             if recognized_text:
-                print(f"🎤 Recognized: {recognized_text}")
+                print(f"Recognized: {recognized_text}")
                 return recognized_text
             else:
-                print("❌ No speech detected")
+                print("No speech detected")
                 return None
                 
         except Exception as e:
-            print(f"❌ Error during recognition: {e}")
+            print(f"Error during recognition: {e}")
             return None
     
     def recognize_from_file(self, file_path: str) -> Optional[str]:

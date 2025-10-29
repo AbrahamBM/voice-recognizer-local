@@ -26,7 +26,7 @@ class VoiceRecognizer:
         Args:
             model_path: Path to Vosk model
         """
-        print("🎙️  Initializing Voice Recognizer...")
+        print("Initializing Voice Recognizer...")
         
         # Initialize components
         self.asr = VoskASR(model_path=model_path)
@@ -34,9 +34,9 @@ class VoiceRecognizer:
         
         # Check microphone
         if not check_microphone():
-            print("⚠️  Warning: Microphone not detected")
+            print("Warning: Microphone not detected")
         
-        print("✅ Voice Recognizer ready!")
+        print("Voice Recognizer ready!")
     
     def process_command(self, duration: float = 3.0, log_file: str = None) -> bool:
         """
@@ -61,11 +61,11 @@ class VoiceRecognizer:
         
         # 2. Match intent
         intent_data = match_intent(text)
-        print(f"📋 Intent: {intent_data['intent']} (confidence: {intent_data['confidence']})")
+        print(f"Intent: {intent_data['intent']} (confidence: {intent_data['confidence']})")
         
         # 3. Execute action
         response = execute(intent_data)
-        print(f"💬 Response: {response}")
+        print(f"Response: {response}")
         
         # 4. Speak response
         self.tts.speak(response)
@@ -82,15 +82,15 @@ class VoiceRecognizer:
         Returns:
             Response text
         """
-        print(f"📝 Processing text: {text}")
+        print(f"Processing text: {text}")
         
         # Match intent
         intent_data = match_intent(text)
-        print(f"📋 Intent: {intent_data['intent']}")
+        print(f"Intent: {intent_data['intent']}")
         
         # Execute action
         response = execute(intent_data)
-        print(f"💬 Response: {response}")
+        print(f"Response: {response}")
         
         return response
     
@@ -117,7 +117,7 @@ class VoiceRecognizer:
         Args:
             log_file: Optional log file path
         """
-        print("\n🎙️  Voice Recognizer - Interactive Mode")
+        print("\nVoice Recognizer - Interactive Mode")
         print("=" * 50)
         print("Commands:")
         print("  - Say 'hola' or 'saludos' for greeting")
@@ -129,21 +129,21 @@ class VoiceRecognizer:
         
         try:
             while True:
-                user_input = input("\n🎤 Press Enter to start recording (or 'exit' to quit): ")
+                user_input = input("\nPress Enter to start recording (or 'exit' to quit): ")
                 
                 if user_input.lower() in ['exit', 'quit', 'q']:
-                    print("👋 Goodbye!")
+                    print("Goodbye!")
                     break
                 
                 success = self.process_command(duration=3.0, log_file=log_file)
                 
                 if not success:
-                    print("⚠️  No speech detected. Try again.")
+                    print("No speech detected. Try again.")
         
         except KeyboardInterrupt:
-            print("\n\n👋 Goodbye!")
+            print("\n\nGoodbye!")
         except Exception as e:
-            print(f"\n❌ Error: {e}")
+            print(f"\nError: {e}")
 
 
 def main():

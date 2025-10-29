@@ -81,12 +81,12 @@ def check_microphone() -> bool:
         if default_device is not None:
             info = sd.query_devices(default_device)
             if info['max_input_channels'] > 0:
-                print(f"✅ Microphone available: {info['name']}")
+                print(f"Microphone available: {info['name']}")
                 return True
-        print("❌ No microphone input device found")
+        print("No microphone input device found")
         return False
     except Exception as e:
-        print(f"❌ Error checking microphone: {e}")
+        print(f"Error checking microphone: {e}")
         return False
 
 

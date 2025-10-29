@@ -2,7 +2,7 @@
 
 Sistema de reconocimiento de voz offline completo que funciona sin conexión a internet. Este proyecto simula un asistente de voz con reconocimiento de voz, comprensión de lenguaje natural, ejecución de acciones y síntesis de voz.
 
-## 📋 Descripción
+## Descripción
 
 Voice Recognizer Local es un sistema de asistente de voz que integra:
 - **ASR (Automatic Speech Recognition)**: Reconocimiento de voz usando Vosk
@@ -10,7 +10,7 @@ Voice Recognizer Local es un sistema de asistente de voz que integra:
 - **Executor**: Ejecución de acciones simuladas
 - **TTS (Text-to-Speech)**: Síntesis de voz usando pyttsx3
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 voice-recognizer-local/
@@ -36,7 +36,7 @@ voice-recognizer-local/
     └── sample.wav              # Archivo de ejemplo
 ```
 
-## 🚀 Instalación
+## Instalación
 
 ### 1. Prerrequisitos
 
@@ -79,7 +79,7 @@ cd models
 pytest tests/ -v
 ```
 
-## 💻 Uso
+## Uso
 
 ### Modo Interactivo
 
@@ -121,7 +121,7 @@ text = asr.recognize_from_file("examples/sample.wav")
 print(text)
 ```
 
-## 🧪 Tests
+## Tests
 
 Ejecutar todos los tests:
 
@@ -136,7 +136,7 @@ pytest tests/test_matcher.py -v
 pytest tests/test_actions.py -v
 ```
 
-## 📝 Intenciones Soportadas
+## Intenciones Soportadas
 
 El sistema reconoce las siguientes intenciones:
 
@@ -147,7 +147,7 @@ El sistema reconoce las siguientes intenciones:
 | `encender_luz` | "enciende la luz", "prende la luz" | Simular encender luz |
 | `apagar_luz` | "apaga la luz", "apagar luz" | Simular apagar luz |
 
-## 🛠️ Personalización
+## Personalización
 
 ### Agregar Nueva Intención
 
@@ -182,7 +182,7 @@ Edita `src/main.py`:
 self.tts = TTSEngine(language='english')  # o 'spanish'
 ```
 
-## 📊 Logging de Transcripciones
+## Logging de Transcripciones
 
 El sistema registra automáticamente las transcripciones en:
 - `logs/transcriptions.log`
@@ -193,7 +193,7 @@ Formato del log:
 2025-10-28 22:31:12 | qué hora es
 ```
 
-## ⚙️ Configuración
+## Configuración
 
 ### Parámetros de Grabación
 
@@ -212,7 +212,7 @@ self.engine.setProperty('rate', 150)    # Velocidad (palabras/min)
 self.engine.setProperty('volume', 0.9)  # Volumen (0.0-1.0)
 ```
 
-## 🐛 Solución de Problemas
+## Solución de Problemas
 
 ### Error: "Vosk model not loaded"
 - **Solución**: Descarga e instala un modelo de Vosk en `models/`
@@ -226,22 +226,22 @@ self.engine.setProperty('volume', 0.9)  # Volumen (0.0-1.0)
 ### Tests fallan
 - **Solución**: Asegúrate de haber instalado todas las dependencias: `pip install -r requirements.txt`
 
-## 📦 Dependencias Principales
+## Dependencias Principales
 
 - **vosk**: Reconocimiento de voz offline
 - **sounddevice**: Grabación y reproducción de audio
 - **pyttsx3**: Síntesis de voz offline
 - **pytest**: Framework de testing
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de código abierto. Siéntete libre de usarlo y modificarlo.
 
-## 👤 Autor
+## Autor
 
 Creado como proyecto educativo de reconocimiento de voz offline.
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Las contribuciones son bienvenidas. Para mejorar el proyecto:
 1. Agrega nuevas intenciones

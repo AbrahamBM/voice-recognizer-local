@@ -29,12 +29,12 @@ def execute(intent_data: Dict[str, Any]) -> str:
     
     elif intent == 'encender_luz':
         # Simulate turning on light
-        print("💡 Light turned ON")
+        print("Light turned ON")
         return "Luz encendida"
     
     elif intent == 'apagar_luz':
         # Simulate turning off light
-        print("🔴 Light turned OFF")
+        print("Light turned OFF")
         return "Luz apagada"
     
     elif intent == 'unknown':
