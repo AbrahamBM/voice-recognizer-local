@@ -1,0 +1,17 @@
+# Voice Recognizer Local - Dependencies
+
+# Speech Recognition
+vosk>=0.3.50
+
+# Audio Processing
+sounddevice>=0.4.6
+numpy>=1.24.0
+
+# Text-to-Speech
+pyttsx3>=2.90
+
+# Testing
+pytest>=7.4.0
+
+# Optional: For audio file processing
+wave
