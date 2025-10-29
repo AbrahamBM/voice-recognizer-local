@@ -212,10 +212,58 @@ self.engine.setProperty('rate', 150)    # Velocidad (palabras/min)
 self.engine.setProperty('volume', 0.9)  # Volumen (0.0-1.0)
 ```
 
+## Recomendaciones y Mejores Prácticas
+
+### Instalación y Configuración
+1. **Entorno Virtual**: Se recomienda crear un entorno virtual antes de instalar dependencias:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # Windows
+   pip install -r requirements.txt
+   ```
+
+2. **Path del Modelo**: Asegúrate de que el modelo de Vosk esté en la estructura correcta:
+   ```
+   models/
+   └── vosk-model-small-es-0.42/
+       ├── am/
+       ├── conf/
+       ├── graph/
+       └── ivector/
+   ```
+
+3. **Dependencias en Windows**: Si encuentras problemas instalando dependencias en Windows:
+   - Usa `python -m pip install` en lugar de solo `pip install`
+   - Verifica que estés usando la versión correcta de Python con `python --version`
+
+### Uso del Sistema
+1. **Calidad de Audio**: Para mejores resultados:
+   - Habla claramente y a una distancia de 30-50 cm del micrófono
+   - Reduce el ruido de fondo
+   - Usa frases completas
+
+2. **Duración de Grabación**: Ajusta la duración según tus necesidades:
+   - 3 segundos: Para comandos cortos (recomendado)
+   - 5 segundos: Para frases más largas
+
+3. **Tests**: Ejecuta los tests antes de usar el sistema:
+   ```bash
+   pytest tests/ -v
+   ```
+
+### Posibles Mejoras
+- Agregar más intenciones y comandos
+- Implementar reconocimiento de voz en tiempo real
+- Mejorar el NLU con machine learning
+- Agregar soporte multiidioma
+- Implementar memoria de contexto para conversaciones
+
 ## Solución de Problemas
 
 ### Error: "Vosk model not loaded"
 - **Solución**: Descarga e instala un modelo de Vosk en `models/`
+- **IMPORTANTE**: Asegúrate de que el modelo esté en la carpeta correcta: `models/vosk-model-small-es-0.42/` (con toda la estructura interna: am/, conf/, graph/, ivector/)
+- **Ruta correcta**: El path debe apuntar a la carpeta específica del modelo, no solo a `models/`
 
 ### Error: "No microphone input device found"
 - **Solución**: Conecta un micrófono o configura el dispositivo de entrada por defecto
@@ -225,6 +273,13 @@ self.engine.setProperty('volume', 0.9)  # Volumen (0.0-1.0)
 
 ### Tests fallan
 - **Solución**: Asegúrate de haber instalado todas las dependencias: `pip install -r requirements.txt`
+
+### Error: "ModuleNotFoundError: No module named 'sounddevice'"
+- **Solución**: Instala las dependencias manualmente: `python -m pip install vosk sounddevice numpy pyttsx3 cffi requests`
+
+### Error al cargar modelo en Windows
+- **Solución**: Asegúrate de usar el path completo del modelo. En Windows, el path debe ser absoluto o usar `os.path.join()` para garantizar compatibilidad
+- **Ejemplo**: El código en `src/main.py` ya incluye la construcción correcta del path
 
 ## Dependencias Principales
 
@@ -237,9 +292,13 @@ self.engine.setProperty('volume', 0.9)  # Volumen (0.0-1.0)
 
 Este proyecto es de código abierto. Siéntete libre de usarlo y modificarlo.
 
-## Autor
+## Autores
 
-Creado como proyecto educativo de reconocimiento de voz offline.
+- **2109430** Abraham Bernacho Mares ITS
+- **2127772** José Ricardo Cruz Tapia ITS
+- **2127967** Guillermo Vladimir Flores Báez ITS
+
+Proyecto educativo de reconocimiento de voz offline desarrollado como parte del curso de Inteligencia Artificial.
 
 ## Contribuciones
 

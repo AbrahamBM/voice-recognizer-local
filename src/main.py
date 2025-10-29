@@ -155,8 +155,10 @@ def main():
     os.makedirs("logs", exist_ok=True)
     log_file = "logs/transcriptions.log"
     
-    # Initialize and run
-    recognizer = VoiceRecognizer(model_path="../models")
+    # Initialize and run - models path points to specific model folder
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    models_path = os.path.join(project_root, "models", "vosk-model-small-es-0.42")
+    recognizer = VoiceRecognizer(model_path=models_path)
     recognizer.run_interactive(log_file=log_file)
 
 
