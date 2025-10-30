@@ -327,7 +327,7 @@ Este proyecto es de código abierto. Siéntete libre de usarlo y modificarlo.
 - **2127772** José Ricardo Cruz Tapia ITS
 - **2127967** Guillermo Vladimir Flores Báez ITS
 
-Proyecto educativo de reconocimiento de voz offline desarrollado como parte del curso de Inteligencia Artificial.
+Proyecto educativo de reconocimiento de voz offline desarrollado como parte del curso de LAB 	CONTROLADORES Y MICROCONTRL. PROGRAMABLES.
 
 ## Contribuciones
 
