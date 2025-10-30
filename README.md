@@ -32,9 +32,38 @@ voice-recognizer-local/
 │   ├── test_matcher.py         # Tests para NLU
 │   └── test_actions.py         # Tests para acciones
 ├── models/                     # Modelos de Vosk (descargar manualmente)
+├── tinkercad/                  # Simulación en hardware
+│   ├── arduino_code.ino        # Código Arduino
+│   ├── circuit_diagram.png     # Diagrama del circuito
+│   └── README.md               # Instrucciones de simulación
 └── examples/
     └── sample.wav              # Archivo de ejemplo
 ```
+
+## 🔧 Simulación en TinkerCad
+
+Este proyecto incluye una representación física simulada que permite visualizar el funcionamiento del sistema mediante componentes Arduino. Cada módulo del software está representado por un LED que se ilumina durante su ejecución, permitiendo observar el flujo completo del procesamiento de voz.
+
+**🔗 [Ver Simulación en TinkerCad](https://www.tinkercad.com/things/aPTMwrCgVry-pia-micro-lab?sharecode=rPbKNDZp1P1STcpVJYrVdIy9z66ohUe5sYGmHNuM6B8)**
+
+### Características de la Simulación
+
+- **Visualización en tiempo real**: LEDs de colores representan cada etapa del proceso
+- **Interfaz LCD**: Muestra el estado actual y respuestas del sistema  
+- **Entrada interactiva**: Botones y potenciómetro simulan comandos de voz
+- **Audio simulado**: Buzzer representa la síntesis de voz
+
+### Componentes Representados
+
+| LED | Módulo del Sistema |
+|-----|-------------------|
+| 🔴 Rojo | Captura de Audio |
+| 🟡 Amarillo | Reconocimiento ASR (Vosk) |
+| 🟢 Verde | Análisis NLU |
+| 🔵 Azul | Ejecución de Acciones |
+| ⚪ Blanco | Síntesis de Voz (TTS) |
+
+Para más detalles sobre la implementación en hardware, consulta la carpeta `/tinkercad` en el repositorio.
 
 ## Instalación
 
@@ -298,7 +327,7 @@ Este proyecto es de código abierto. Siéntete libre de usarlo y modificarlo.
 - **2127772** José Ricardo Cruz Tapia ITS
 - **2127967** Guillermo Vladimir Flores Báez ITS
 
-Proyecto educativo de reconocimiento de voz offline desarrollado como parte del curso de CONTROLADORES Y MICROCONTRL. PROGRAMABLES.
+Proyecto educativo de reconocimiento de voz offline desarrollado como parte del curso de Inteligencia Artificial.
 
 ## Contribuciones
 
@@ -311,4 +340,3 @@ Las contribuciones son bienvenidas. Para mejorar el proyecto:
 ---
 
 **Nota**: Este proyecto es una simulación educativa. Para uso en producción, considera sistemas más robustos y seguros.
-
