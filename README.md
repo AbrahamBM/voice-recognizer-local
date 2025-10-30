@@ -14,40 +14,40 @@ Voice Recognizer Local es un sistema de asistente de voz que integra:
 
 ```
 voice-recognizer-local/
-├── README.md
-├── requirements.txt
-├── examples/
-├── logs/
-│   └── transcriptions.log
-├── models/
-│   └── vosk-model-small-es-0.42/
-│       ├── am/
-│       ├── conf/
-│       ├── graph/
-│       ├── ivector/
-│       └── README
-├── src/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── asr/
+├── README.md                         # Contexto del proyecto y guía de uso
+├── requirements.txt                  # Dependencias de Python necesarias
+├── examples/                         # Ejemplos y audios de prueba
+├── logs/                             # Carpeta de logs generados por la app
+│   └── transcriptions.log            # Historial de transcripciones
+├── models/                           # Modelos Vosk descargados localmente
+│   └── vosk-model-small-es-0.42/     # Modelo español ejemplo
+│       ├── am/                       # Parámetros acústicos
+│       ├── conf/                     # Configuración del modelo
+│       ├── graph/                    # Grafos FST para decodificación
+│       ├── ivector/                  # Configs y matrices de i-vectors
+│       └── README                    # Notas del modelo
+├── src/                              # Código fuente del asistente
+│   ├── __init__.py                   # Marca el paquete Python
+│   ├── main.py                       # Punto de entrada de la app
+│   ├── asr/                          # Módulo de reconocimiento de voz (ASR)
 │   │   ├── __init__.py
-│   │   └── vosk_asr.py
-│   ├── executor/
+│   │   └── vosk_asr.py               # Integración con Vosk para ASR
+│   ├── executor/                     # Ejecutor de acciones según intención
 │   │   ├── __init__.py
-│   │   └── actions.py
-│   ├── logs/
-│   ├── nlu/
+│   │   └── actions.py                # Acciones simuladas (encender/apagar, etc.)
+│   ├── logs/                         # Utilidades o datos de logging internos
+│   ├── nlu/                          # Comprensión de lenguaje natural (NLU)
 │   │   ├── __init__.py
-│   │   └── matcher.py
-│   ├── tts/
+│   │   └── matcher.py                # Reglas/patrones para detectar intenciones
+│   ├── tts/                          # Síntesis de voz (TTS)
 │   │   ├── __init__.py
-│   │   └── tts_engine.py
-│   └── utils/
+│   │   └── tts_engine.py             # Engine de TTS con pyttsx3
+│   └── utils/                        # Utilidades compartidas
 │       ├── __init__.py
-│       └── audio.py
-└── tests/
-    ├── test_actions.py
-    └── test_matcher.py
+│       └── audio.py                  # Grabación/procesamiento básico de audio
+└── tests/                            # Suite de pruebas
+    ├── test_actions.py               # Tests de acciones del ejecutor
+    └── test_matcher.py               # Tests del NLU (matcher)
 ```
 
 ## 🔧 Simulación en TinkerCad
