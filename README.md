@@ -16,28 +16,38 @@ Voice Recognizer Local es un sistema de asistente de voz que integra:
 voice-recognizer-local/
 ├── README.md
 ├── requirements.txt
+├── examples/
+├── logs/
+│   └── transcriptions.log
+├── models/
+│   └── vosk-model-small-es-0.42/
+│       ├── am/
+│       ├── conf/
+│       ├── graph/
+│       ├── ivector/
+│       └── README
 ├── src/
-│   ├── main.py                 # Punto de entrada principal
+│   ├── __init__.py
+│   ├── main.py
 │   ├── asr/
-│   │   └── vosk_asr.py        # Módulo de reconocimiento de voz
-│   ├── nlu/
-│   │   └── matcher.py          # Módulo de comprensión de lenguaje
+│   │   ├── __init__.py
+│   │   └── vosk_asr.py
 │   ├── executor/
-│   │   └── actions.py           # Módulo de ejecución de acciones
+│   │   ├── __init__.py
+│   │   └── actions.py
+│   ├── logs/
+│   ├── nlu/
+│   │   ├── __init__.py
+│   │   └── matcher.py
 │   ├── tts/
-│   │   └── tts_engine.py       # Módulo de síntesis de voz
+│   │   ├── __init__.py
+│   │   └── tts_engine.py
 │   └── utils/
-│       └── audio.py            # Utilidades de audio
-├── tests/
-│   ├── test_matcher.py         # Tests para NLU
-│   └── test_actions.py         # Tests para acciones
-├── models/                     # Modelos de Vosk (descargar manualmente)
-├── tinkercad/                  # Simulación en hardware
-│   ├── arduino_code.ino        # Código Arduino
-│   ├── circuit_diagram.png     # Diagrama del circuito
-│   └── README.md               # Instrucciones de simulación
-└── examples/
-    └── sample.wav              # Archivo de ejemplo
+│       ├── __init__.py
+│       └── audio.py
+└── tests/
+    ├── test_actions.py
+    └── test_matcher.py
 ```
 
 ## 🔧 Simulación en TinkerCad
